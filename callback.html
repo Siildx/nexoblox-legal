@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OAuth Callback</title>
+</head>
+<body>
+  <h2>Procesando inicio de sesión...</h2>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      console.log("Authorization code:", code);
+      document.body.innerHTML = "<h2>✔ Código obtenido correctamente</h2><p>Código: " + code + "</p>";
+    } else {
+      document.body.innerHTML = "<h2>❌ No se recibió ningún código</h2>";
+    }
+  </script>
+</body>
+</html>
